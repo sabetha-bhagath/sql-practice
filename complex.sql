@@ -7,7 +7,7 @@ select * from dup_practice;
 select id,count(*) emp_count from dup_practice where name='aaa' group by id;
 select id,count(*) emp_count from dup_practice  group by id having count(*)>1;
 
-delete from dup_practice where id not in (select max(id) from dup_practice group by id);
+delete from dup_practice  id not in (select max(id) from dup_practice group by id);
 
 create table dup_bkp as select * from dup_practice;
 
