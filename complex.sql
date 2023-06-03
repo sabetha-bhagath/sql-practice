@@ -9,7 +9,6 @@ select id,count(*) emp_count from dup_practice  group by id having count(*)>1;
 
 delete from dup_practice where id not in (select max(id) from dup_practice group by id);
 
-create table dup_bkp as select * from dup_practice;
 
 with dup_rec as(
 select id,name, row_number() over(partition by id,name order by id) d_count from dup_practice
