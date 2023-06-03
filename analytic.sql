@@ -1,5 +1,7 @@
 alter table joins rename column  cl to c1;
 
+******************************************************************
+
 select * from joins;
  alter table joins add name varchar(20);
  
