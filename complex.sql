@@ -1,6 +1,6 @@
 create table dup_practice(id number,name varchar(10));
 
-insert into dup_practice values(2,'aaa');
+
 
 select * from dup_practice;
 
