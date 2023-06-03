@@ -13,7 +13,7 @@ delete from dup_practice where id not in (select max(id) from dup_practice group
 with dup_rec as(
 select id,name, row_number() over(partition by id,name order by id) d_count from dup_practice
 )
-delete from dup_rec where d_count>1;
+delete from dup_rec where d_count>1;-- incorrect will not work
 
 delete d1 from dup_practice d1,dup_practice d2 where d1.id>d2.id and d1.name=d2.name;
 
